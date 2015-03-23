@@ -3,8 +3,8 @@ require 'v8'
 
 module Handlebars
   class Context
-    def initialize
-      @js = V8::Context.new
+    def initialize(*args)
+      @js = V8::Context.new(*args)
       @js.load(Handlebars::Source.bundled_path)
 
       @partials = handlebars.partials = Handlebars::Partials.new
