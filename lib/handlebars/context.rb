@@ -54,6 +54,11 @@ module Handlebars
       data[key]
     end
 
+    def destroy!
+      @js.dispose
+      @js = nil
+    end
+
     class << self
       attr_accessor :current
     end
